@@ -1,0 +1,242 @@
+{% load static %}
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Hind+Siliguri&display=swap");
+  .navbar {
+    font-family: "Hind Siliguri", sans-serif;
+    height: 100px;
+  }
+</style>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+  crossorigin="anonymous"
+></script>
+
+<nav
+  class="navbar navbar-expand-lg navbar-dark fixed-top"
+  style="background-color: #161616"
+>
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">
+      <img
+        src="{% static 'images/newlogo.png' %}"
+        alt=""
+        width="100"
+        height="100"
+      />
+    </a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 h5">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'case_studies' %}">Case Studies</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'services' %}">Services</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact' %}">Contact us</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            id="navbarDropdown"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Business Credit Bureaus
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li>
+              <a class="dropdown-item" href="{% url 'sendesta' %}">Sendesta</a>
+            </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li>
+              <a class="dropdown-item" href="{% url 'DunAndBradStreet' %}"
+                >Dun & Bradstreet</a
+              >
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'ziteso' %}">Ziteso</a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="{% url 'vukode' %}">Vudoke</a>
+            </li>
+          </ul>
+        </li>
+
+        {% if user.is_authenticated %}
+
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'dashboard:logout' %}">Logout</a>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'dashboard:login' %}">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'dashboard:register' %}">Sign Up</a>
+        </li>
+        {% endif %}
+      </ul>
+    </div>
+  </div>
+  {% if messages %} {% for message in messages %}
+  <div class="alert alert-{{ message.tags }}">
+    <a href="#" class="close" data-dismiss="alert">&times;</a>
+    {{ message }}
+  </div>
+  {% endfor %} {% endif %}
+</nav>
+<script>
+  $(document).ready(function () {
+    $(".navbar .container-fluid .collapse .nav-item .nav-link").on(
+      "click",
+      function () {
+        $(".nav-link").find(".active").removeClass("active");
+        $(this).addClass("active");
+      }
+    );
+  });
+</script>
+
+<!-- <header class="main-header header-style-five five-alternate">
+ 
+  <div class="header-upper">
+    <div class="auto-container">
+      <div class="clearfix">
+        <div class="pull-left logo-box">
+          <div class="logo">
+            <a href="/"
+              ><img
+                style="
+                  object-fit: contain;
+                  height:80px ;
+                  margin-top: 20%;
+                  object-fit: contain;
+                "
+                src="{% static 'images/logo.png' %}"
+                alt=""
+                title=""
+            /></a>
+          </div>
+        </div>
+        <div class="nav-outer clearfix">
+          <nav class="main-menu navbar-expand-md">
+            <div class="navbar-header">
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+            </div>
+            <div
+              class="navbar-collapse collapse clearfix"
+              id="navbarSupportedContent"
+            >
+              <ul class="navigation clearfix">
+                <li><a href="/">Home</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="{% url 'case_studies' %}">Case Studies</a></li>
+                <li><a href="{% url 'testimonial' %}">Testimonial</a></li>
+                <li><a href="{% url 'services' %}">Services</a></li>
+                <li><a href="{% url 'contact' %}">Contact us</a></li>
+                <li><a href="{% url 'sendesta' %}">Sendesta</a></li>
+				
+				{% if user.is_authenticated %}
+					
+				<li>	<a href="{% url 'dashboard:logout' %}">Logout</a> </li>
+				{% else %}
+				<li><a href="{% url 'dashboard:login' %}">Login</a></li>
+				<li><a href="{% url 'dashboard:register' %}">Sign Up</a></li>
+				{% endif %}
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="sticky-header">
+    <div class="auto-container clearfix">
+      <div class="logo pull-left">
+        <a href="/" class="img-responsive"
+          ><img src="{% static 'images/logo-3.png' %}" alt="" title=""
+        /></a>
+      </div>
+      <div class="right-col pull-right">
+        <nav class="main-menu navbar-expand-md">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent1"
+            aria-controls="navbarSupportedContent1"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div
+            class="navbar-collapse collapse clearfix"
+            id="navbarSupportedContent1"
+          >
+            <ul class="navigation clearfix">
+               <li><a class="current" href="/">Home</a></li>
+                <li><a href="{% url 'about' %}">About Us</a></li>
+                <li><a href="{% url 'case_studies' %}">Case Studies</a></li>
+                <li><a href="{% url 'testimonial' %}">Testimonial</a></li>
+                <li><a href="{% url 'services' %}">Services</a></li>
+                <li><a href="{% url 'contact' %}">Contact us</a></li>
+                <li><a href="{% url 'sendesta' %}">Sendesta</a></li>
+				
+				{% if user.is_authenticated %}
+					
+				<li>	<a href="{% url 'dashboard:logout' %}">Logout</a> </li>
+				{% else %}
+				<li><a href="{% url 'dashboard:login' %}">Login</a></li>
+				<li><a href="{% url 'dashboard:register' %}">Sign Up</a></li>
+				{% endif %}
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+  {% if messages %} {% for message in messages %}
+  <div class="alert alert-{{ message.tags }}">
+    <a href="#" class="close" data-dismiss="alert">&times;</a>
+    {{ message }}
+  </div>
+  {% endfor %} {% endif %}
+</header> -->
+<!--End Main Header -->

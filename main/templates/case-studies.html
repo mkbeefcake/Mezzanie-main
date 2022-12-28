@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+	<!--Page Title-->
+    <section class="page-title" style="background-image:url({% static 'images/background/8.jpg' %})">
+    	<div class="auto-container">
+        </div>
+    </section>
+    <!--End Page Title-->
+
+	<!-- Case Section Three-->
+	<section class="case-section-three">
+		<div class="auto-container">
+			<!-- Sec Title -->
+			<div class="sec-title centered">
+				<div class="title">Case studies / Testimonials</div>
+				<h2>See How We Can Help You Grow Your Business</span></h2>
+			</div>
+			<div class="row clearfix">
+
+				<!-- Case Block -->
+				<div class="case-block-two col-lg-6 col-md-6 col-sm-12">
+					<div class="inner-box wow pulse" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="image-outer">
+							<div class="image">
+								<img src="{% static 'images/resource/case-1.jpg' %}" alt="" />
+								<div class="overlay-box">
+									<a href="{% static 'images/resource/case-1.jpg' %}" data-fancybox="news" data-caption="" class="plus flaticon-plus-symbol"></a>
+								</div>
+							</div>
+						</div>
+						<div class="lower-content">
+							<h4>Joe's $150,000 Hybrid Loan With Eagle Mezzanine Capital</h4>
+							<div class="text">Joe used his business credit that he built to be able to acquire a hybrid loan, which consist of a cash line of credit and line of credit for services he needs for his business. He did not have to give a personal guarantee, and was able to secure the financing he needed to grow his business and increase his revenue. </div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Case Block -->
+				<div class="case-block-two col-lg-6 col-md-6 col-sm-12">
+					<div class="inner-box wow pulse" data-wow-delay="0ms" data-wow-duration="1500ms">
+						<div class="image-outer">
+							<div class="image">
+								<img src="{% static 'images/resource/case-3.jpg' %}" alt="" />
+								<div class="overlay-box">
+									<a href="{% static 'images/resource/case-3.jpg' %}" data-fancybox="news" data-caption="" class="plus flaticon-plus-symbol"></a>
+								</div>
+							</div>
+						</div>
+						<div class="lower-content">
+							<h4>Lisa's $200,000 Hybrid Loan</h4>
+							<div class="text">Lisa needed a hybrid loan to grow her business. She was able to acquire a hybrid loan with us by building her business credit with Sendesta. Lisa loved the idea of a cash line of credit and a line of credit for services her business needed to increase sales.  </div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</section>
+	<!-- End Case Section Three-->
+{% endblock content %}

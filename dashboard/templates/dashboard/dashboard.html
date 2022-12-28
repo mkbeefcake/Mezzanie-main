@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zxx" class="js">
+    {% load static %}
+  
+    <head>
+        <base href="../" />
+        <meta charset="utf-8" />
+        <meta name="author" content="Softnio" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta
+          name="description"
+          content="A powerful and conceptual apps base dashboard template that especially build for developers and programmers."
+        />
+        <!-- Fav Icon  -->
+        <link
+          rel="shortcut icon"
+          href="{% static 'dashboard/assets/css/theme.css?ver=2.8.0' %}"
+        />
+        <!-- Page Title  -->
+        <title>Eagle Mezzanine Capital</title>
+        <!-- StyleSheets  -->
+        <link
+          rel="stylesheet"
+          href="{% static 'dashboard/assets/css/dashlite.css' %}"
+        />
+        
+        <link
+          id="skin-default"
+          rel="stylesheet"
+          href="{% static 'dashboard/assets/css/theme.css' %}"
+        />
+      </head>
+
+    <body class="nk-body npc-default has-apps-sidebar has-sidebar">
+        <div class="nk-app-root">
+            {% include "dashboard/darksidetab.html" %}
+      
+            <!-- main @s -->
+            <div class="nk-main">
+              <!-- wrap @s -->
+              <div class="nk-wrap">
+                {% include "dashboard/navbar.html" %}
+                {% include "dashboard/sidetabs.html" %}
+                <!-- content @s -->
+    {% block content %}
+
+    {% endblock content%}
+    <!-- app-root @e -->
+    <!-- JavaScript -->
+    <!-- content @e -->
+</div>
+<!-- wrap @e -->
+</div>
+<!-- main @e -->
+</div>
+    <script src="{% static 'dashboard/assets/js/bundle.js' %}"></script>
+    <script src="{% static 'dashboard/assets/js/scripts.js' %}"></script>
+    <script src="{% static 'dashboard/assets/js/charts/gd-analytics.js' %}"></script>
+    <script src="{% static 'dashboard/assets/js/libs/jqvmap.js' %}"></script>
+
+    </body>
+</html>

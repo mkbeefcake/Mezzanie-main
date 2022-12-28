@@ -1,0 +1,40 @@
+<div class="nk-sidebar" data-content="sidebarMenu">
+  <div class="nk-sidebar-inner" data-simplebar>
+    <ul class="nk-menu nk-menu">
+      <!-- .nk-menu-heading -->
+      <li class="nk-menu-item">
+        <a href="{% url 'dashboard:home' %}" class="nk-menu-link">
+          <span class="nk-menu-icon"
+            ><em class="icon ni ni-dashboard"></em
+          ></span>
+          <span class="nk-menu-text">Dashboard</span>
+        </a>
+      </li>
+      <!-- .nk-menu-item -->
+      <li class="nk-menu-item">
+        <a href="{% url 'dashboard:purchase-products' %}" class="nk-menu-link">
+          <span class="nk-menu-icon"><em class="icon ni ni-speed"></em></span>
+          <span class="nk-menu-text">Use Invoice Factoring Services</span>
+        </a>
+      </li>
+      <!-- .nk-menu-item -->
+      <li class="nk-menu-item">
+        <a href="{% url 'dashboard:payments' %}" class="nk-menu-link">
+          <span class="nk-menu-icon"
+            ><em class="icon ni ni-bitcoin-cash"></em
+          ></span>
+          <span class="nk-menu-text">Payments</span>
+        </a>
+      </li>
+      <!-- .nk-menu-item -->
+
+      <li class="nk-menu-item">
+        <a href="{% url 'dashboard:products-access' %}" class="nk-menu-link">
+          <span class="nk-menu-icon"><em class="icon ni ni-coins"></em></span>
+          <span class="nk-menu-text">Access Invoice Factoring Services</span>
+        </a>
+      </li>
+    </ul>
+    <!-- .nk-menu -->
+  </div>
+</div>

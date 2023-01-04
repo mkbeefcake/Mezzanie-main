@@ -36,9 +36,9 @@
                                 <div class="nk-block-head">
                                     <div class="nk-block-head-content">
                                         <h5 class="nk-block-title">Register</h5>
-                                        <div class="nk-block-des">
+                                        {% comment %} <div class="nk-block-des">
                                             <p>Create New Dashlite Account</p>
-                                        </div>
+                                        </div> {% endcomment %}
                                     </div>
                                 </div><!-- .nk-block-head -->
                                 <form action="{% url 'dashboard:register' %}" method="post" enctype="multipart/form-data"> {% csrf_token %}
